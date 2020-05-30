@@ -44,6 +44,7 @@ def create_dataset(filelist, N=10000, M=1000): # N is 10000 episodes, M is numbe
   data = np.zeros((M*N, 64, 64, 3), dtype=np.uint8)
   idx = 0
   for i in range(N):
+    print (filelist)
     filename = filelist[i]
     filepath = os.path.join("record", filename)
     print("PATH :::: >>>> ", filepath)
