@@ -46,7 +46,7 @@ def create_dataset(filelist, N=10000, M=1000): # N is 10000 episodes, M is numbe
   for i in range(N):
     print (filelist)
     filename = filelist[i]
-    filepath = os.path.join("record", filename)
+    filepath = "record/"+filename
     print("PATH :::: >>>> ", filepath)
     raw_data = np.load(filepath, allow_pickle=True)['obs']
     l = len(raw_data)
