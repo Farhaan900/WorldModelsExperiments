@@ -33,7 +33,7 @@ def count_length_of_filelist(filelist):
   total_length = 0
   for i in range(N):
     filename = filelist[i]
-    raw_data = np.load(os.path.join("record", filename))['obs']
+    raw_data = np.load(os.path.join("record", filename), allow_pickle=True)['obs']
     l = len(raw_data)
     total_length += l
     if (i % 1000 == 0):
@@ -45,7 +45,7 @@ def create_dataset(filelist, N=10000, M=1000): # N is 10000 episodes, M is numbe
   idx = 0
   for i in range(N):
     filename = filelist[i]
-    raw_data = np.load(os.path.join("record", filename))['obs']
+    raw_data = np.load(os.path.join("record", filename), allow_pickle=True)['obs']
     l = len(raw_data)
     if (idx+l) > (M*N):
       data = data[0:idx]
