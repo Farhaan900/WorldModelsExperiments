@@ -25,7 +25,7 @@ def load_raw_data_list(filelist):
   counter = 0
   for i in range(len(filelist)):
     filename = filelist[i]
-    raw_data = np.load(os.path.join(DATA_DIR, filename))
+    raw_data = np.load(os.path.join(DATA_DIR, filename), allow_pickle=True)
     data_list.append(raw_data['obs'])
     action_list.append(raw_data['action'])
     if ((i+1) % 1000 == 0):

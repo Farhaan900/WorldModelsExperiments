@@ -58,7 +58,7 @@ def default_hps():
 hps_model = default_hps()
 hps_sample = hps_model._replace(batch_size=1, max_seq_len=1, use_recurrent_dropout=0, is_training=0)
 
-raw_data = np.load(os.path.join(DATA_DIR, "series.npz"))
+raw_data = np.load(os.path.join(DATA_DIR, "series.npz"), allow_pickle=True)
 
 # load preprocessed data
 data_mu = raw_data["mu"]
