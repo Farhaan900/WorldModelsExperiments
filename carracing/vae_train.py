@@ -63,7 +63,7 @@ def create_dataset(filelist, N=10000, M=1000): # N is 10000 episodes, M is numbe
 # load dataset from record/*. only use first 10K, sorted by filename.
 filelist = os.listdir(DATA_DIR)
 filelist.sort()
-filelist = filelist[0:10000]
+filelist = filelist[1:10001]
 #print("check total number of images:", count_length_of_filelist(filelist))
 dataset = create_dataset(filelist)
 
