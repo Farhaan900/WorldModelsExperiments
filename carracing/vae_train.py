@@ -45,7 +45,9 @@ def create_dataset(filelist, N=10000, M=1000): # N is 10000 episodes, M is numbe
   idx = 0
   for i in range(N):
     filename = filelist[i]
-    raw_data = np.load(os.path.join("record", filename), allow_pickle=True)['obs']
+    filepath = os.path.join("record", filename)
+    print("PATH :::: >>>> ", filepath)
+    raw_data = np.load(filepath, allow_pickle=True)['obs']
     l = len(raw_data)
     if (idx+l) > (M*N):
       data = data[0:idx]
